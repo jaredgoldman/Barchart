@@ -1,0 +1,141 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+
+header {
+  width: 97.25vw;
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+  border-bottom-style: solid;
+  border-width: 1px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 19fr 1fr;
+  grid-template-columns: 1.5fr 18.5fr;
+  width: 100vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.yaxis {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  border-right-style: solid;
+  border-width: 1px;
+  padding-top: 15px;
+}
+
+.yDiv {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  height: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#yDiv0 {
+  height: 2%;
+  position: relative;
+  bottom: -.3%;
+
+}
+
+.barcontainer {
+  display: flex;
+  flex-direction: row;
+  background-color: seashell;
+  height: 45em;
+}
+
+.barwrapper {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding-top: 26px;
+}
+
+.bar {
+  display: flex;
+  margin-top: auto;
+  border-style: solid;
+  border-bottom-style: none;
+  border-width: 1px;
+  border-color: black;
+  border-top-left-radius: .5em;
+  border-top-right-radius: .5em;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+}
+
+.textSpan {
+  position: relative;
+  width: auto;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.xaxis {
+  display: flex;
+  flex-direction: row;
+  border-top-style: solid;
+  border-width: 1px;
+  position: relative;
+  height: 50%;
+}
+
+.xDiv {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 1em;
+  border-top-style: none ;
+  border-width: 0px 1px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav {
+  padding-top: 30px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+
+}
+
+.nav > .button {
+  position: relative;
+  text-align: center;
+  padding-right: 5%;
+  padding-left: 5%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+}
+/* must figure out how to make relative height of bars to Y-axis

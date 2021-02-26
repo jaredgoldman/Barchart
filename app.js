@@ -43,12 +43,18 @@ function createMultiBars(barData, options, i) {
 
 function styleBar(barData, options, div, barWrapperIndex, barIndex) {
   div.className = 'bar';
-  div.setAttribute('style', 'background-color: ' + barData[barWrapperIndex][barIndex].color);
+  let backgroundColor = barData[barWrapperIndex][barIndex].color
+  div.setAttribute('style', 'background-color: ' + backgroundColor);
   div.style.marginLeft = options.pxSpace + 'px';
   div.style.marginRight = options.pxSpace + 'px';
   div.style.height = barData[barWrapperIndex][barIndex].value * 100 / (findMaxValue(barData)) + "%";
   let textSpan = document.createElement("span");
-  textSpan.style.color = barData[barWrapperIndex][barIndex].labelColor;
+  if (extractRGB(div.style.backgroundColor) > 450) {
+    textSpan.style.color = 'black';
+  } else {
+    textSpan.style.color = 'white';
+  }
+  // textSpan.style.color = barData[barWrapperIndex][barIndex].labelColor;
   textSpan.setAttribute("class", "textSpan");
   if (barData[barWrapperIndex][barIndex].value === 0) {
   } else {
@@ -68,6 +74,16 @@ function styleBar(barData, options, div, barWrapperIndex, barIndex) {
     div.style.alignItems = "center";
   }
   div.appendChild(textSpan);
+}
+
+function extractRGB(str) {
+  rgbTotal = 0;
+  let rgbArray = str.substring(4, str.length-1).replace(/ /g, '').split(',');
+  for (let i = 0; i <= 2; i++) {
+    rgbTotal += parseInt(rgbArray[i], 10);
+  }
+  console.log(rgbTotal)
+  return rgbTotal
 }
 
 function createYDivs(barData, options) {
@@ -209,3 +225,4 @@ $("#button3").click(function(){
   $('#yaxis').empty();
   drawBarChart(barContainer, multiBarObjectArray3, optionsObject3);
 });
+

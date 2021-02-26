@@ -112,16 +112,6 @@ function randomBetween(min, max) {
   return randomNumber;
 }
 
-function removeBars() {
-  const wrapper = document.getElementById('wrapper');
-  f
-  const xAxis = document.getElementById('xaxis');
-  const yAxis = document.getElementById('yaxis');
-  wrapper.removeChild(yAxis);
-  xA.removeChild(xAxis);
-  wrapper.removeChild(barContainer);
-}
-
 let multiBarObjectArray1 = [
   ['Mart Daemon',
   {value: 369, color: 'rgb(116, 81, 200)', labelColor: 'white'}],
@@ -173,7 +163,7 @@ let multiBarObjectArray3 = [
 let optionsObject1 = {
   yIncrement: 100,
   pxSpace: 50,
-  title: "Bro of The Year ",
+  title: "Bro of The Yearggi ",
   fontSize: "20px",
   barTextLocation: 'top',
   unit: 'number'
@@ -197,11 +187,7 @@ let optionsObject3 = {
   unit: 'number'
 }
 
-drawBarChart(barContainer, multiBarObjectArray1, optionsObject1);
-
-let button1 = document.getElementById("button1")
-let button2= document.getElementById("button2")
-let button3 = document.getElementById("button3")
+drawBarChart(barContainer, multiBarObjectArray2, optionsObject2);
 
 $("#button1").click(function(){
   $('#barcontainer').empty();
@@ -223,16 +209,3 @@ $("#button3").click(function(){
   $('#yaxis').empty();
   drawBarChart(barContainer, multiBarObjectArray3, optionsObject3);
 });
-
-// button1.addEventListener('click', (e) => {
-//   removeBars();
-//   drawBarChart(barContainer, multiBarObjectArray1, optionsObject1);
-// });
-// button2.addEventListener('click', (e) => {
-//   removeBars();
-//   drawBarChart(barContainer, multiBarObjectArray2, optionsObject2);
-// });
-// button3.addEventListener('click', (e) => {
-//   removeBars();
-//   drawBarChart(barContainer, multiBarObjectArray3, optionsObject3);
-// });

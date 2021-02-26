@@ -49,12 +49,7 @@ function styleBar(barData, options, div, barWrapperIndex, barIndex) {
   div.style.marginRight = options.pxSpace + 'px';
   div.style.height = barData[barWrapperIndex][barIndex].value * 100 / (findMaxValue(barData)) + "%";
   let textSpan = document.createElement("span");
-  if (extractRGB(div.style.backgroundColor) > 450) {
-    textSpan.style.color = 'black';
-  } else {
-    textSpan.style.color = 'white';
-  }
-  // textSpan.style.color = barData[barWrapperIndex][barIndex].labelColor;
+  textSpan.style.color = barData[barWrapperIndex][barIndex].labelColor;
   textSpan.setAttribute("class", "textSpan");
   if (barData[barWrapperIndex][barIndex].value === 0) {
   } else {
@@ -77,13 +72,13 @@ function styleBar(barData, options, div, barWrapperIndex, barIndex) {
 }
 
 function extractRGB(str) {
-  rgbTotal = 0;
+  console.log(str.substring(4, str.length-1).replace(/ /g, '').split(','));
   let rgbArray = str.substring(4, str.length-1).replace(/ /g, '').split(',');
   for (let i = 0; i <= 2; i++) {
-    rgbTotal += parseInt(rgbArray[i], 10);
+    rgbArray[i] = parseInt(rgbArray[i], 10);
+
   }
-  console.log(rgbTotal)
-  return rgbTotal
+  return rgbArray[0] + rgbArray[1] + rgbArray[2];
 }
 
 function createYDivs(barData, options) {
@@ -226,3 +221,4 @@ $("#button3").click(function(){
   drawBarChart(barContainer, multiBarObjectArray3, optionsObject3);
 });
 
+console.log(extractRGB('rgb(116, 81, 200'));

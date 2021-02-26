@@ -127,6 +127,7 @@ nav {
   display: flex;
   position: relative;
   justify-content: center;
+  padding-bottom: 20px;
 
 }
 

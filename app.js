@@ -163,7 +163,7 @@ let multiBarObjectArray3 = [
 let optionsObject1 = {
   yIncrement: 100,
   pxSpace: 50,
-  title: "Bro of The Yearggi ",
+  title: "Bro of The Year",
   fontSize: "20px",
   barTextLocation: 'top',
   unit: 'number'
